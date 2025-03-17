@@ -3,10 +3,9 @@ def input_error(func):
         try:
             return func(*args, **kwargs)
         except ValueError:
-            return "Give me name and phone please."
+            return "Invalid input. Use: name phone"
         except KeyError:
-            return "Contact does not exist"
+            return "Contact not found."
         except IndexError:
-            return "Exactly one argument is required(for examp name)."
-
+            return "Invalid input. Please provide necessary arguments."
     return inner
