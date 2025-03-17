@@ -31,7 +31,7 @@ def main():
             print(add_contact(args, contacts))
         elif command in CMD_CHANGE:
             print(change_contact(args, contacts))
-        elif command == "phone":
+        elif command in CMD_PHONE:
             print(show_phone(args, contacts))
         elif command in CMD_ALL:
             print(show_all(contacts))
