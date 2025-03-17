@@ -1,16 +1,17 @@
 import re
-# from typing import Callable # працює і без цього, але callable з маленької букви
+# працює і без цього, але callable з маленької букви
+from typing import Generator, Callable
 
 
-def generator_numbers(text: str) -> any:
+def generator_numbers(text: str) -> Generator[float, None, None]:
     pattern = r"\b\d+\.\d+\b"  # регулярний вираз для знаходження чисел
-    # тут також можливе використання re.finditter()
-    for match in re.findall(pattern, text):
+    # тут також можливе використання re.finditer()
+    for numbers in re.findall(pattern, text):
         # повернення числа як результату;можливе группування типу: yield float(match.groupe())
-        yield float(match)
+        yield float(numbers)
 
 
-def sum_profit(text: str, func: callable):
+def sum_profit(text: str, func: Callable) -> float:
     return sum(func(text))
 
 
